@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace ConsoleApplication
 {
@@ -11,8 +12,12 @@ namespace ConsoleApplication
         static void Main(string[] args)
         {
             string fileName, destFile = "";// test.txt";
-            string sourcePath = @"C:\FileTransfer\source";
-            string targetPath = @"C:\FileTransfer\destination";
+           // string sourcePath = @"C:\FileTransfer\source";
+            //string targetPath = @"C:\FileTransfer\destination";
+
+            string sourcePath =ConfigurationSettings.AppSettings["SourcePath"];
+            string targetPath = ConfigurationSettings.AppSettings["DestinationPath"];
+
 
             //================================================ Single file Copy =================================
             //// Use Path class to manipulate file and directory paths.
